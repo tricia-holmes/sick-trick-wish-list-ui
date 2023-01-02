@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Form({ setNewTrick }) {
+export default function Form({ setNewTrick, postData }) {
   const [stance, setStance] = useState('')
   const [name, setName] = useState('')
   const [obstacle, setObstacle] = useState('')
@@ -12,10 +12,8 @@ export default function Form({ setNewTrick }) {
   }, [stance, obstacle])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
     const body = { stance, name, obstacle, tutorial }
-    setNewTrick(body)
+    postData(body)
   }
 
   return (
