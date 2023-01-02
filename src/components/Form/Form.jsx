@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Form() {
+export default function Form({ setNewTrick }) {
   const [stance, setStance] = useState('')
   const [name, setName] = useState('')
   const [obstacle, setObstacle] = useState('')
@@ -15,8 +15,7 @@ export default function Form() {
     e.preventDefault()
 
     const body = { stance, name, obstacle, tutorial }
-
-    console.log(body)
+    setNewTrick(body)
   }
 
   return (
@@ -28,6 +27,7 @@ export default function Form() {
         onChange={(e) => {
           setStance(e.target.value)
         }}
+        required
       >
         <option value=''>Choose your stance</option>
         <option value='Regular'>Regular</option>
@@ -42,6 +42,7 @@ export default function Form() {
         placeholder='Name of Trick'
         value={name}
         autoComplete='off'
+        required
       />
       <select
         name='stanceList'
@@ -50,6 +51,7 @@ export default function Form() {
         onChange={(e) => {
           setObstacle(e.target.value)
         }}
+        required
       >
         <option value=''>Choose your obstacle</option>
         <option value='Flatground'>Flatground</option>
@@ -67,6 +69,7 @@ export default function Form() {
         placeholder='Link of Tutorial'
         value={tutorial}
         autoComplete='off'
+        required
       />
       <p>{name}</p>
       <p>{tutorial}</p>
