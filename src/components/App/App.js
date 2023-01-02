@@ -2,9 +2,11 @@ import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 import API_ROUTES from '../../utilis/constants'
 import Trick from '../Trick/Trick'
+import Form from '../Form/Form'
 
 export default function App() {
   const [tricks, setTricks] = useState([])
+  const [newTrick, setNewTrick] = useState({})
 
   const fetchData = useCallback(async () => {
     const response = await fetch(API_ROUTES.GET_TRICKS, {
@@ -35,9 +37,15 @@ export default function App() {
     fetchData().catch(console.error)
   }, [])
 
+  useEffect(() => {
+    console.log(newTrick)
+  }, [newTrick])
+
+
   return (
     <div className='App'>
       <h1>Sick Trick Wish List</h1>
+      <Form setNewTrick={setNewTrick}/>
       <div className='tricks'>{tricks}</div>
     </div>
   )
