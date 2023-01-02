@@ -1,5 +1,11 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-header {
@@ -19,4 +25,10 @@ h1 {
   margin-bottom: 240px;
 }
 
-
+.tricks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 240px;
+}
