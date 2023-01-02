@@ -24,6 +24,7 @@ export default function App() {
           stance={trick.stance}
           obstacle={trick.obstacle}
           url={trick.tutorial}
+          id={trick.id}
         />
       )
     })
@@ -33,7 +34,7 @@ export default function App() {
   }, [])
 
   const postData = async (body) => {
-console.log(body)
+    console.log(body)
     const response = await fetch(API_ROUTES.POST_TRICK, {
       method: 'POST',
       headers: {

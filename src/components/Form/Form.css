@@ -1,0 +1,36 @@
+form {
+  display: flex;
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 25px;
+  background-color: black;
+}
+
+select {
+  font-family: 'Fredoka One', cursive;
+  height: 38px;
+  margin: 12px;
+}
+
+input {
+  font-family: 'Fredoka One', cursive;
+  height: 30px;
+  margin: 12px;
+}
+
+button {
+  height: 30px;
+  margin: 2.2vh;
+  font-size: 1.2rem;
+  background-color: hotpink;
+  border: none;
+  color: white;
+  border-radius: 12px;
+}
+
+button:hover {
+  filter: hue-rotate(-80deg);
+}
+
+button:active {
+  transform: (scale(0.95));
+}

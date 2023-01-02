@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
+import './Form.css'
 
-export default function Form({ setNewTrick, postData }) {
+export default function Form({postData }) {
   const [stance, setStance] = useState('')
   const [name, setName] = useState('')
   const [obstacle, setObstacle] = useState('')
@@ -43,8 +44,8 @@ export default function Form({ setNewTrick, postData }) {
         required
       />
       <select
-        name='stanceList'
-        id='stanceList'
+        name='obstacleList'
+        id='obstacleList'
         value={obstacle}
         onChange={(e) => {
           setObstacle(e.target.value)
@@ -69,8 +70,6 @@ export default function Form({ setNewTrick, postData }) {
         autoComplete='off'
         required
       />
-      <p>{name}</p>
-      <p>{tutorial}</p>
       <button type='submit'>Send It!</button>
     </form>
   )
